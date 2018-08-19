@@ -3,7 +3,7 @@ const path    = require('path');
 
 const app    = express();
 const server = require('http').createServer(app);
-const io     = require('socket.io')(server, {origins '*:*'});
+const io     = require('socket.io')(server);
 
 app.use(express.static(path.join(__dirname,'public')));
 app.set('views',path.join(__dirname,'public'));
@@ -16,7 +16,7 @@ app.use('/',(req,res) =>{
 });
 
 let messages = [];
-
+io.origins('*:*') // for latest version
 io.on('connection', socket => {
 
 
