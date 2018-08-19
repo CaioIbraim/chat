@@ -29,7 +29,7 @@ io.on('connection', socket => {
     if(data){
         console.log(data);
     }else{
-      console.log("Socket Não conectado... :(");
+      console.log("Socket Não conectado...");
     }
 
 
