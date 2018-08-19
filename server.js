@@ -26,7 +26,13 @@ io.on('connection', socket => {
 
   //Recebe uma mensagem do cliente
   socket.on('sendMessage', data => {
-    console.log(data);
+    if(data){
+        console.log(data);
+    }else{
+      console.log("Socket Não conectado... :(");
+    }
+
+
     messages.push(data);
     socket.broadcast.emit('receivedMessage', data);
   });
