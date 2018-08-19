@@ -16,7 +16,7 @@ app.use('/',(req,res) =>{
 });
 
 let messages = [];
-io.origins('*:*') // for latest version
+io.set('origins', 'http://beitmiklat-com-br.umbler.net:3000'); // for latest version
 io.on('connection', socket => {
 
 
