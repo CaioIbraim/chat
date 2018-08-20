@@ -16,7 +16,7 @@ app.use('/',(req,res) =>{
 });
 
 let messages = [];
-io.set('origins', 'http://localhost:3000'); // for latest version
+
 io.on('connection', socket => {
 
 
@@ -26,13 +26,7 @@ io.on('connection', socket => {
 
   //Recebe uma mensagem do cliente
   socket.on('sendMessage', data => {
-    if(data){
-        console.log(data);
-    }else{
-      console.log("Socket Não conectado...");
-    }
-
-
+   console.log(data);
     messages.push(data);
     socket.broadcast.emit('receivedMessage', data);
   });
