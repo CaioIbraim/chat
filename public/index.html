@@ -25,7 +25,6 @@
 
 <script>
     var socket = io('http://localhost:3000');
-		socket.origins('*:*') // for latest version
     function renderMessage(message){
         $('.messages').append('<div class="message"><strong>'+message.author+'</strong> '+message.message+'');
     }
